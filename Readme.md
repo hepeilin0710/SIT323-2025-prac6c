@@ -1,29 +1,11 @@
-# 🛠 Requirements
-Node.js and npm installed
+#  Start Minikube
+minikube start --driver=docker
 
-Docker installed
 
-Minikube installed (local Kubernetes cluster)
+# Deploy to Kubernetes
+kubectl apply -f k8s/deployment.yaml
+kubectl apply -f k8s/service.yaml
 
-kubectl installed (Kubernetes CLI)
+# Access the Web App
+http://localhost:3000/calculate?num1=10&num2=5&operation=add
 
-Docker Hub account (for pushing images)
-
-# 🚀 Kubernetes Deployment Full Steps
-
-# 1. Start Minikube
-minikube start
-
-# 2. Apply Deployment
-kubectl apply -f deployment.yaml
-
-# 3. Apply Service
-kubectl apply -f service.yaml
-
-# 4. Verify Pods
-kubectl get pods
-
-# 5. Verify Services
-kubectl get services
-# Auto-open Browser
-minikube service nodejs-service
